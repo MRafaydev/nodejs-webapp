@@ -1,5 +1,10 @@
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
+
+mongoose
+  .connect("mongodb://admin:adnin@172.31.0.2:27017/?authSource=admin")
+  .then(() => console.log("Connected!"));
 
 app.get("/", (req, res) => {
   res.send("<h2>Hello World!!</h2>");
